@@ -1,0 +1,14 @@
+
+func main() {
+	var a  = []string{}
+	fmt.Println(unsafe.Pointer(&a))
+	a = append(a,"b")
+	fmt.Println(a)
+	fmt.Println(unsafe.Pointer(&a))
+}
+
+首先append是创建一个新的列表,如果要被加入的切片容量不够，就会重新
+申请内存空间，但是内存地址还是指向原来的内存地址，如果把append的值重新
+赋给原来的切片，我觉得声明的时候just声明了一快内存空间，
+
+如果没错足够的map会发生什么，只是会重新申请内存，加长时间而已
