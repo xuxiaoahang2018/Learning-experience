@@ -1,0 +1,6 @@
+e extract 抽取
+t transform 转换
+l load 装载
+
+并称为etl 主要是数据的采集，相当于一个概念的定义 
+
