@@ -1,0 +1,20 @@
+ 1. 结构体转json 转出来是[]byte 类型
+ 2. json 往结构体转，也必须是结构体后面定的标签的类型
+
+func main(){
+	var aihao = Aihao{"chongchong"}
+	data,_:=json.Marshal(aihao)
+	fmt.Println(data)
+	var aihao1 Aihao
+	err := json.Unmarshal(data,&aihao1)
+
+	if err == nil{
+		fmt.Println(aihao1)
+	}
+	var ceshi = `{"Women":"chongchong"}`
+	var aihao2 Aihao
+	err1 := json.Unmarshal([]byte(ceshi),&aihao2)
+	if err1 == nil {
+		fmt.Println(aihao2)
+	}
+}
