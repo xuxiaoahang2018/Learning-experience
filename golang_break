@@ -1,1 +1,0 @@
-关于golang的break，在python里面break会直接退出程序，而go里面break是用来跳出循环接着往下面执行的

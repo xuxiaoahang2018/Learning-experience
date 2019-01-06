@@ -18,3 +18,21 @@ func main(){
 		fmt.Println(aihao2)
 	}
 }
+
+要注意的，
+首先 json.Marshal 转出来是二进制数组，也就是[]byte类型，这个类型可以转换成字符串，
+然后 `{"name":"evan}`这种类型字符串需要转换成[]byte类型才可以放到 json.Unmarshal 里面
+进行反解析，解析出来就是里面填入的参数类型，json.Unmarshal(x,&y)y 这个一定要是一种类型的变量
+而不是放类型进去。而且一定要放这个值的引用进去，否则没法反编译
+
+结构体的字段要大写，否则无法导json，
+
+struct 转json ，如果有标签会按照标签转，同样json转struct也要按照标签来，否则失败，
+如果struct里面包含了一个struct,然后这个struct还有标签，例如
+
+type Person struct{
+	Name string
+	Aihao `json:"xihuan"`
+}
+这样等于多了一个 字典，字典的键就是 xihuan ，如果没有tag标签，则没有这个字典.
+
