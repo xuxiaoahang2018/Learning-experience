@@ -1,0 +1,11 @@
+i如果不小心在测试代码中写上了用户名和密码，而且已经commit到git中，那么我要怎么把这次commit删除掉，让它在历史中不会出现？
+
+git reset --soft HEAD~1
+在保证你修改的基础上撤销一次commit
+如果使用--hard 会把你的修改也删除掉
+
+不是还是可以通过 git reflog 查到被删除的commit吗?我试过了,还是可以回到被删除的commit
+
+git reflog expire --expire=now --all (这会清除分支变更历史)
+
+
