@@ -1,0 +1,22 @@
+class Test(Enum):
+  red = 1
+  orange = 2
+  yellow = 3
+  green = 4
+  blue = 5
+
+特性，枚举成员名称不能重复，值如果重复，那么第二个是第一个属性的别称，
+可以通过值获取成员
+Test(1) \\ Test.red
+可以通过名称来获取成员
+Test["red"] \\ Test.red
+
+获取到成员以后可以取出名称和值
+Test.red.name \\ red
+Test.red.value \\ 1
+
+也可以直接通过属性访问成员
+Test.red 
+
+还有其他详情看https://www.cnblogs.com/ucos/p/5896861.html
+
