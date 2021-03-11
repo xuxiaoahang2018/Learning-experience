@@ -50,10 +50,25 @@
    host模式，使用–net=host指定。 这种创建出来的容器，可以看到host上所有的网络设备。容器中，对这些设备有全部的访问权限。calico-node、calico-cni采用这种方式
    container模式，使用–net=container:容器名称或ID指定 ; kubernetes的pod网络模型本质上应用此方式。创建一个默认的pause容器，然后通过cni创建其网络；同一pod内的其他容器复用pause的网络
 
+13. 进程／线程／groutine 
 
 
+14. go 调度器 (GMP 模型)
+Go语言的goroutine来自协程的概念，让一组可复用的函数运行在一组线程之上，即使有协程阻塞，该线程的其他协程也可以被runtime调度，转移到其他可运行的线程上。最关键的是，程序员看不到这些底层的细节，这就降低了编程的难度，提供了更容易的并发。
+Go中，协程被称为goroutine，它非常轻量，一个goroutine只占几KB，并且这几KB就足够goroutine运行完，这就能在有限的内存空间内支持大量goroutine，支持了更多的并发。虽然一个goroutine的栈只占几KB，但实际是可伸缩的，如果需要更多内存，runtime会自动为goroutine分配
 
 
+15.go 指针／引用传递
+* int、float、bool、array、sturct等
+  值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数
+  声明一个值类型变量时，编译器会在栈中分配一个空间，空间里存储的就是该变量的值　　
+
+* slice，map，channel，interface，func，string等
+  声明一个引用类型的变量，编译器会把实例的内存分配在堆上
+  string和其他语言一样，是引用类型，string的底层实现struct String { byte* str; intgo len; }; 但是因为string不允许修改，每次操作string只能生成新的对象，所以在看起来使用时像值类型　　
 
 
-
+16. new/make 
+* make 用于内建类型分配内存，slice, map, channel 的初始化， 返回类型的零值
+ new 用于其他值的初始化，返回的是指针
+ 
