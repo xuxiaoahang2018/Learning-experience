@@ -42,6 +42,14 @@
 11. 为什么dict是无序的
 * dict 底层是用的数组，插入的时候有键要哈希
 
+12. docker 的网络模型
+* Docker在创建容器时有四种网络模式，bridge为默认不需要用–net去指定，其他三种模式需要在创建容器时使用–net去指定。
+
+   bridge模式，使用–net=bridge指定，默认设置。 容器和host 网络相同，可以通过iptables访问外部网络
+   none模式，使用–net=none指定。 模式下创建容器是不会为容器配置任何网络参数； 这样创建出来的容器完全没有网络，需要自己去配置
+   host模式，使用–net=host指定。 这种创建出来的容器，可以看到host上所有的网络设备。容器中，对这些设备有全部的访问权限。calico-node、calico-cni采用这种方式
+   container模式，使用–net=container:容器名称或ID指定 ; kubernetes的pod网络模型本质上应用此方式。创建一个默认的pause容器，然后通过cni创建其网络；同一pod内的其他容器复用pause的网络
+
 
 
 
