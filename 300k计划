@@ -72,3 +72,6 @@ Go中，协程被称为goroutine，它非常轻量，一个goroutine只占几KB�
 * make 用于内建类型分配内存，slice, map, channel 的初始化， 返回类型的零值
  new 用于其他值的初始化，返回的是指针
  
+ 
+17. redis 的数据结构有哪些
+* 五种，string, list, map, set sorted set(有序集合）
