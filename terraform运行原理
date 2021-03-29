@@ -48,3 +48,12 @@ workspace——工作区管理
 debug——调试输出管理（实验）
 force-unlock——手动解锁terraform状态
 state——州，高级国家管理
+
+
+更新指定go sdk 
+GO111MODULE=on go get github.com/aliyun/alibaba-cloud-sdk-go/services/elasticsearch@master
+GO111MODULE=on go mod tidy
+GO111MODULE=on go mod vendor
+
+
+
