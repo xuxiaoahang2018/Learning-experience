@@ -9,3 +9,20 @@ git reset --soft HEAD~1
 git reflog expire --expire=now --all (这会清除分支变更历史)
 
 
+
+追加写入 文件 卧槽 我太牛逼了:
+git log --pretty=fomat:"%H - %s" -n 1 
+git log --pretty=fomat:"%H - %s" -n 1| tee test.txt -a
+
+
+
+一、拉取远程分支
+如果项目已经与origin master建立连接，就直接把远程分支拉去到本地：
+1、把远程分支拉到本地
+git fetch origin dev（dev为远程仓库的分支名）
+2、在本地创建分支dev并切换到该分支
+git checkout -b dev(本地分支名称) origin/dev(远程分支名称)
+3、把分支内容都拉取到本地
+git pull origin dev(远程分支名称)
+
+
