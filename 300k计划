@@ -98,3 +98,21 @@ Go中，协程被称为goroutine，它非常轻量，一个goroutine只占几KB�
 22 进程／线程
 
 * 进程是资源分配的最小单位,线程是程序执行的最小单位。
+
+
+33.golang  runtime模型
+
+
+34 rds 触发器是什么
+
+
+35 mysql 给一个表两个字段a,b，并且都给他们创建索引，当他select * from table  where a ==1 and b ==1 的时候，查询逻辑怎么走，会不会都走两个索引。
+
+
+36 python的循环引用什么情况造成，怎么去解，python 的垃圾回收机制，__del__
+
+37. 单例模式的几种方式。
+
+
+
+
